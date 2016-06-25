@@ -45,8 +45,8 @@ public class GenericRepository<T extends BaseModel> {
 
     public ArrayList<T> get(Query c) {
         ArrayList<T> objects = new ArrayList<T>();
-        for (int i = 0; i < all().size(); i++) {
-            T obj = all().get(i);
+
+        for(T obj : all()){
             if (c.isValid(obj))
                 objects.add(obj);
         }
